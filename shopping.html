@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping - Auto Click Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 600px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .product-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-card h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+        
+        .product-card p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .product-card .price {
+            color: #f5576c;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        
+        .back-button {
+            margin-top: 30px;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .back-button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛍️ Trang Shopping</h1>
+        <p>Chào mừng đến với trang shopping!</p>
+        
+        <div class="product-grid">
+            <div class="product-card">
+                <h3>📱 Điện thoại</h3>
+                <p>Sản phẩm chất lượng cao</p>
+                <div class="price">5.000.000₫</div>
+            </div>
+            
+            <div class="product-card">
+                <h3>💻 Laptop</h3>
+                <p>Hiệu năng mạnh mẽ</p>
+                <div class="price">15.000.000₫</div>
+            </div>
+            
+            <div class="product-card">
+                <h3>⌚ Đồng hồ</h3>
+                <p>Thiết kế sang trọng</p>
+                <div class="price">3.000.000₫</div>
+            </div>
+            
+            <div class="product-card">
+                <h3>🎧 Tai nghe</h3>
+                <p>Âm thanh sống động</p>
+                <div class="price">1.500.000₫</div>
+            </div>
+        </div>
+        
+        <a href="/" class="back-button">← Quay lại trang chủ</a>
+    </div>
+</body>
+</html>
+
