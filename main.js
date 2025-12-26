@@ -1,3 +1,11 @@
+// Ẩn loading khi trang đã load xong
+window.addEventListener('load', function() {
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    if (loadingOverlay) {
+        loadingOverlay.classList.remove('active');
+    }
+});
+
 // Đợi DOM load xong hoàn toàn
 document.addEventListener('DOMContentLoaded', function() {
     // #region agent log
@@ -18,6 +26,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const pageLoadTime = Date.now();
     const redirectDelay = 3000; // 3 giây
     
+    // Hàm hiển thị loading
+    function showLoading() {
+        const loadingOverlay = document.getElementById('loadingOverlay');
+        if (loadingOverlay) {
+            loadingOverlay.classList.add('active');
+        }
+    }
+
+    // Hàm ẩn loading
+    function hideLoading() {
+        const loadingOverlay = document.getElementById('loadingOverlay');
+        if (loadingOverlay) {
+            loadingOverlay.classList.remove('active');
+        }
+    }
+
     // Hàm xử lý khi button được click
     function handleButtonClick() {
         // #region agent log
@@ -27,8 +51,13 @@ document.addEventListener('DOMContentLoaded', function() {
         clickCount++;
         countSpan.textContent = clickCount;
         
-        // Chuyển sang trang shopping
-        window.location.href = '/shopping.html';
+        // Hiển thị loading trước khi chuyển trang
+        showLoading();
+        
+        // Chuyển sang trang shopping với delay nhỏ để loading hiển thị mượt
+        setTimeout(() => {
+            window.location.href = '/shopping.html';
+        }, 300);
     }
     
     // Thêm event listener cho button
